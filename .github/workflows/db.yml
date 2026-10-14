@@ -1,0 +1,35 @@
+name: db
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  db:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Last database
+        run: git fetch origin db && git show origin/db:db.json > db.json || true
+      - name: Build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 build_db.py db.json
+      - name: Publish to the db branch
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@users.noreply.github.com
+          mkdir /tmp/out && cp db.json /tmp/out/
+          git checkout --orphan db-new
+          git rm -rfq .
+          cp /tmp/out/db.json .
+          git add db.json
+          if git diff --quiet --cached origin/db -- 2>/dev/null; then echo unchanged; exit 0; fi
+          git commit -qm "db $(date -u +%F)"
+          git push -f origin db-new:db
