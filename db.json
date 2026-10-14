@@ -1,0 +1,40 @@
+{
+ "db_id": "RealGoemon/mister-extra-cores",
+ "files": {
+  "_Arcade/cores/Rayforce_20260917.rbf": {
+   "hash": "931718b1880740eb56c5a015179e58d6",
+   "size": 4725284,
+   "tags": [
+    "arcade",
+    "cores",
+    "taitof3"
+   ],
+   "url": "https://raw.githubusercontent.com/spacestate1/Arcade-taitoF3_MiSTer/197a0d903449ec42f979d0ff7b7517078ee85cba/releases/Rayforce_20260917.rbf"
+  },
+  "_Arcade/cores/Syvalion_20260830.rbf": {
+   "hash": "9abbcfebf7f6e7adb46a949b7486632a",
+   "size": 3555396,
+   "tags": [
+    "arcade",
+    "cores",
+    "syvalion"
+   ],
+   "url": "https://raw.githubusercontent.com/diegov-au/Syvalion_MiSTer/b615ec7aaaaa79b1a8e96fa52a03f925fbc31473/releases/Syvalion_20260830.rbf"
+  }
+ },
+ "folders": {
+  "_Arcade": {
+   "tags": [
+    "arcade"
+   ]
+  },
+  "_Arcade/cores": {
+   "tags": [
+    "arcade",
+    "cores"
+   ]
+  }
+ },
+ "timestamp": 1791957500,
+ "v": 1
+}
